@@ -1,0 +1,10 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Single-source resume build: edit content.js, get three versions as docx + pdf.",
+  "scripts": {
+    "build": "node build.js",
+    "docx": "node build.js --no-pdf"
+  }
+}

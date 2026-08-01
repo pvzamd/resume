@@ -1,0 +1,66 @@
+name: resume
+
+on:
+  push:
+    paths: ['content.js', 'lib/**', 'templates/**', 'build.js', '.github/workflows/resume.yml']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      pdf:
+        description: 'Also render preview PDFs with LibreOffice'
+        type: boolean
+        default: false
+
+jobs:
+  # Gate: the three versions must stay in sync. No dependencies to install.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Build docx + parity check
+        run: node build.js --no-pdf
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resume-docx
+          path: dist/*.docx
+          if-no-files-found: error
+
+  # Optional preview PDFs. LibreOffice substitutes fonts it doesn't have
+  # (Century Gothic in v3, Calibri Light in v1), so these are for eyeballing
+  # only — send recruiters the PDFs you export locally from Word.
+  preview-pdf:
+    if: github.event_name == 'workflow_dispatch' && inputs.pdf
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Install LibreOffice + Calibri-metric fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libreoffice-writer fonts-crosextra-carlito poppler-utils
+          fc-cache -f
+
+      - run: node build.js --no-pdf
+
+      - name: Convert and assert one page each
+        run: |
+          soffice --headless --convert-to pdf --outdir dist dist/*.docx
+          fail=0
+          for f in dist/*.pdf; do
+            pages=$(pdfinfo "$f" | awk '/^Pages:/ {print $2}')
+            echo "$(basename "$f"): $pages page(s)"
+            [ "$pages" = "1" ] || { echo "::error::$(basename "$f") is $pages pages"; fail=1; }
+          done
+          exit $fail
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf-preview
+          path: dist/*.pdf
