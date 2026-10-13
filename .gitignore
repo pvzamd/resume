@@ -1,3 +1,7 @@
 .build/
 node_modules/
 ~$*.docx
+
+# Career docs copied from employer projects: they hold internal details and this
+# repo is public. Local only.
+career-feeds/
