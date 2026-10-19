@@ -31,10 +31,9 @@ const C = {
   },
 
   profile:
-    'Senior Software Engineer with nearly 5 years modernizing web applications across fintech and enterprise platforms. ' +
-    'Experienced in rebuilding production systems end to end, pairing Vue 3, React, and Next.js interfaces with Node.js API layers, ' +
-    'and shipping them through evolving APIs, backend migrations, and third-party integrations. ' +
-    'Focused on clean architecture, measurable performance gains, and reliable releases.',
+    'Senior Software Engineer with nearly 5 years building web applications across fintech and enterprise platforms. ' +
+    "Lead development of Alice Blue's Next.js corporate website and TradeSchool, owning architecture, code review and releases. " +
+    'Strong in Vue 3, React and Next.js with Node.js backends, and focused on measurable gains in performance, SEO and reliability.',
 
   jobs: [
     {
@@ -44,13 +43,13 @@ const C = {
       suffix: '',
       bullets: [
         // slot with 1 hyperlink (Rise)
-        "Re-architected and rebuilt [[Rise]], Alice Blue's investment platform, in **Vue 3** (Composition API), owning investment and payment workflows end to end and integrating BSE 2.0 APIs.",
+        "Top contributor (37% of commits) to [[Rise]], Alice Blue's **Vue 3** mutual-fund platform: built the IPO, goal-investing and ELSS flows, moved payments to **BSE StarMF 2.0**, and replaced ~140 ad-hoc API calls with a shared service layer.",
         // slot with 2 hyperlinks (Corporate Website, TradeSchool)
-        'Building the [[Corporate Website]] and [[TradeSchool]] in **Next.js**, with SEO-optimized routing, faster page loads, and an accessibility-first component architecture.',
-        'Kept production releases seamless through continuously evolving APIs and a full backend migration from **Java to Go**.',
-        'Maintain **Node.js** API layers that proxy external requests, enforce controlled access, and handle third-party integrations.',
-        'Refactored the Partner Dashboard and eKYC platforms onto shared, reusable patterns, cutting duplicated logic and speeding up feature work.',
-        'Own release coordination, deployment setup, cron scheduling, and cloud storage integration; cover critical flows with **Vitest** unit tests and ship responsive transactional email templates.',
+        'Lead development of the [[Corporate Website]] and [[TradeSchool]] in **Next.js**: own the architecture, code review (~380 PRs merged) and production releases, and mentor junior developers.',
+        'Built SEO-first stock and IPO sections (**7,000+** pages with TradingView charts) and cut Google-reported 404s by **92%** (34.5k to 2.7k) with nginx redirect maps and sitemap fixes.',
+        'Removed Material UI site-wide and improved mobile INP by deferring third-party tags, cutting main-thread busy time from **343 to 18 ms/s**; halved page-transition time with Suspense streaming.',
+        'Designed and shipped the internal Performance Management System solo (**Next.js**, **Prisma/MySQL**, **AWS EC2**), automating monthly reviews, weighted scoring and email notifications for 83 employees.',
+        'Shipped an embeddable **Vue 3** support-chat library for the vendor-maintained ANT trading app (9 languages, 170 test assertions), a **Node.js** LeadSquared CRM sync job, and Outlook-safe email templates on **AWS S3**.',
       ],
     },
     {
@@ -59,11 +58,11 @@ const C = {
       dates: 'Feb 2022 – Apr 2024',
       suffix: ' (acquired by IBM)',
       bullets: [
-        'Refactored the legacy **webMethods** codebase to **ES6+** and removed heavy dependencies such as Lodash, cutting workflow execution time by **40%**, webhook startup by **75%**, and API transaction costs by **15%**.',
-        'Developed **Node.js** plugins and automation scripts for real-time data processing and service integration on the webMethods platform.',
-        'Built and maintained multi-platform integration bots for Webex Teams, driving interactive workflows with Microsoft Adaptive Cards.',
-        'Migrated **AppHub** from class-based to functional **React** components, improving OAuth integration and service configuration.',
-        'Integrated third-party SaaS platforms over REST APIs and webhooks to power bot-driven workflows.',
+        'Refactored legacy **webMethods** code to **ES6+** and removed heavy dependencies like Lodash, cutting workflow execution time by **40%**, webhook startup by **75%** and API transaction costs by **15%**.',
+        'Developed **Node.js** plugins and automation scripts for real-time data processing on the webMethods platform.',
+        'Built Webex Teams integration bots with interactive Microsoft Adaptive Cards.',
+        'Migrated **AppHub** from class-based to functional **React** components.',
+        'Integrated third-party SaaS platforms over REST APIs and webhooks.',
       ],
     },
     {
@@ -72,27 +71,27 @@ const C = {
       dates: 'Feb 2021 – Feb 2022',
       suffix: '',
       bullets: [
-        'Built and maintained client web applications across e-commerce, automotive, education, logistics, and services using **HTML**, **CSS**, **JavaScript**, jQuery, and **Vue.js**.',
+        'Built client web apps in e-commerce, automotive, education and logistics using **HTML**, **CSS**, **JavaScript** and **Vue.js**.',
       ],
     },
   ],
 
   projects: [
-    '[[pnl-heatmap]] (npm package): Reusable GitHub-style heatmap component for visualizing time-series financial performance data, published to npm and drop-in across frontend applications.',
-    '[[Dual-Hangman Game]]: Full-stack **Node.js** and **React** app deployed on **AWS EC2** with NGINX, PM2, and Linux administration; built with AI-assisted development (Claude Code, Antigravity IDE).',
+    '[[pnl-heatmap]] (npm package): Zero-dependency JavaScript library that renders GitHub-style daily P&L calendars, with ESM/UMD builds and CDN delivery.',
+    '[[Dual-Hangman Game]]: Full-stack **Node.js** and **React** app deployed on **AWS EC2** with NGINX and PM2; built with AI-assisted development (Claude Code, Antigravity IDE).',
   ],
 
   // label / value pairs — 9 rows, matching the slots available in v1's sidebar
   skills: [
-    ['Frontend', 'Vue.js 3 (Composition API), React, Next.js, Pinia, TradingView Charting Library'],
+    ['Frontend', 'Vue.js 3 (Composition API), React, Next.js (App Router), Pinia, TradingView'],
     ['Languages', 'JavaScript (ES6+), TypeScript'],
-    ['Backend', 'Node.js, Express, API proxy layers'],
-    ['Integration', 'REST APIs, Axios / Fetch, OAuth, Webhooks'],
+    ['Backend', 'Node.js, Express, Prisma ORM, cron jobs'],
+    ['Integration', 'REST APIs, OAuth, Webhooks, LeadSquared CRM'],
     ['Databases', 'MySQL, MongoDB'],
     ['UI & Styling', 'HTML5, CSS3, Tailwind CSS, SASS/SCSS, Material UI, Vuetify, Bootstrap'],
-    ['Cloud & DevOps', 'AWS EC2, Docker, NGINX, Linux, PM2, SSH'],
+    ['Cloud & DevOps', 'AWS EC2/S3, NGINX, PM2, Docker, GitHub Actions'],
     ['Testing & Tools', 'Vitest, Git, GitHub, Postman, Figma'],
-    ['Practices', 'Responsive design, Accessibility (a11y), Clean architecture, Agile'],
+    ['Practices', 'Technical SEO, Core Web Vitals, a11y, Code review, Mentoring'],
   ],
 
   education: [
