@@ -45,9 +45,10 @@ const C = {
         // slot with 1 hyperlink (Rise)
         "Top contributor (37% of commits) to [[Rise]], Alice Blue's **Vue 3** mutual-fund platform: built the IPO, goal-investing and ELSS flows, moved payments to **BSE StarMF 2.0**, and replaced ~140 ad-hoc API calls with a shared service layer.",
         // slot with 2 hyperlinks (Corporate Website, TradeSchool)
-        'Lead development of the [[Corporate Website]] and [[TradeSchool]] in **Next.js**: own the architecture, code review (~380 PRs merged) and production releases, and mentor junior developers.',
+        'Lead development of the [[Corporate Website]] and [[TradeSchool]] in **Next.js**: own the architecture, code review (~400 PRs merged) and production releases, and mentor junior developers.',
+        'Redesigning TradeSchool hands-on (11 pages in **Next.js 16** and **Tailwind 4**) and designed its next-phase architecture for content, login and payments.',
         'Built SEO-first stock and IPO sections (**7,000+** pages with TradingView charts) and cut Google-reported 404s by **92%** (34.5k to 2.7k) with nginx redirect maps and sitemap fixes.',
-        'Removed Material UI site-wide and improved mobile INP by deferring third-party tags, cutting main-thread busy time from **343 to 18 ms/s**; halved page-transition time with Suspense streaming.',
+        'Improved INP: removed Material UI, deferred third-party tags (main-thread busy **343 to 18 ms/s**), built real-user INP attribution, and cut a brokerage-calculator tap from **~4 s to under 0.2 s**.',
         'Designed and shipped the internal Performance Management System solo (**Next.js**, **Prisma/MySQL**, **AWS EC2**), automating monthly reviews, weighted scoring and email notifications for 83 employees.',
         'Shipped an embeddable **Vue 3** support-chat library for the vendor-maintained ANT trading app (9 languages, 170 test assertions), a **Node.js** LeadSquared CRM sync job, and Outlook-safe email templates on **AWS S3**.',
       ],
@@ -59,10 +60,9 @@ const C = {
       suffix: ' (acquired by IBM)',
       bullets: [
         'Refactored legacy **webMethods** code to **ES6+** and removed heavy dependencies like Lodash, cutting workflow execution time by **40%**, webhook startup by **75%** and API transaction costs by **15%**.',
-        'Developed **Node.js** plugins and automation scripts for real-time data processing on the webMethods platform.',
+        'Developed **Node.js** plugins and automation scripts for real-time data processing on webMethods.',
         'Built Webex Teams integration bots with interactive Microsoft Adaptive Cards.',
         'Migrated **AppHub** from class-based to functional **React** components.',
-        'Integrated third-party SaaS platforms over REST APIs and webhooks.',
       ],
     },
     {
@@ -86,7 +86,7 @@ const C = {
     ['Frontend', 'Vue.js 3 (Composition API), React, Next.js (App Router), Pinia, TradingView'],
     ['Languages', 'JavaScript (ES6+), TypeScript'],
     ['Backend', 'Node.js, Express, Prisma ORM, cron jobs'],
-    ['Integration', 'REST APIs, OAuth, Webhooks, LeadSquared CRM'],
+    ['Integration', 'REST APIs, OAuth, Webhooks, WordPress, LeadSquared'],
     ['Databases', 'MySQL, MongoDB'],
     ['UI & Styling', 'HTML5, CSS3, Tailwind CSS, SASS/SCSS, Material UI, Vuetify, Bootstrap'],
     ['Cloud & DevOps', 'AWS EC2/S3, NGINX, PM2, Docker, GitHub Actions'],
