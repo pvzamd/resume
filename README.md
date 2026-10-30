@@ -37,16 +37,20 @@ matching key in `links`.
 
 ## Constraints worth knowing before you edit
 
-- **Bullet counts are fixed for v1 and v3.** Those templates have a fixed number
-  of paragraph slots (Alice Blue 6, Software AG 5, CrowInfo 1; skills 9 rows;
-  education 3). Adding or removing an array entry breaks their builders. v2
-  grows freely.
+- **v1 and v3 fill fixed template slots.** The templates have Alice Blue 6,
+  Software AG 5 and CrowInfo 1 bullet slots, 9 skill rows and 3 education rows.
+  A job with fewer bullets drops its spare slots; extra bullets are cloned after
+  the job's last slot (without hyperlinks). Skills and education counts are still
+  fixed. v2 grows freely.
 - **The first two Alice Blue bullets carry hyperlinks** — slot 1 has one link,
   slot 2 has two. Keep `[[Rise]]` in the first and
   `[[Corporate Website]]`/`[[TradeSchool]]` in the second, or reorder v1.js and
   v3.js to match.
 - **v2 is sized to fill one A4 page.** Adding a few lines pushes it to two. The
   build prints a warning if any pdf comes out over one page.
+- **No Word on this machine?** `python tools/fitcheck.py` simulates Word's line
+  wrapping and compares each layout's line count with the last Word-made PDFs
+  (`dist/*_2026-08-01.pdf`). Needs fontTools and PyMuPDF.
 - **Send v1 as PDF, never as .docx.** Its content lives in floating text boxes,
   so a .docx text parser reads it as empty. The PDF extracts fine.
 
