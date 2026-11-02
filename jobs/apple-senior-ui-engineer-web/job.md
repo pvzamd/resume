@@ -5,7 +5,7 @@
 | Link | https://jobs.apple.com/en-us/details/200690650-0321/senior-ui-engineer-web?board=17682 |
 | Role number | 200690650-0321 (Apple's internal level: ICT3) |
 | Team | IS&T, Retail and Marcom Engineering: the online and physical Apple Store, plus marketing experiences and tools |
-| Location | **Bengaluru** (zip 560092). Also posted for Hyderabad: pick Bengaluru on the form. |
+| Location | **Bengaluru** (zip 560094). Also posted for Hyderabad: pick Bengaluru on the form. |
 | Type | Full-time, on site (not a home-office role) |
 | Posted | 2026-10-21 |
 | Experience asked | 4–8 years. 4.9 fits. |
@@ -97,3 +97,4 @@ resume. The page has about 18pt to spare.
 | :-- | :-- |
 | 2026-11-02 | Tailored resume built (DOCX, on the office desktop). PDF still to build on the laptop. Not applied. |
 | 2026-11-02 | Rebuilt with the new Software AG bullets from the generic resume. |
+| 2026-11-02 | PDF built on the laptop. **Applied** on jobs.apple.com (Bengaluru, zip 560094), with LinkedIn and GitHub links. Shows as Submitted under Your Roles. |

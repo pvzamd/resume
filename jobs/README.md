@@ -47,4 +47,4 @@ stay in the private notes.
 
 | Folder | Company | Role | Location | Status |
 | :-- | :-- | :-- | :-- | :-- |
-| `apple-senior-ui-engineer-web/` | Apple (IS&T, Retail and Marcom Engineering) | Senior UI Engineer - Web, 200690650-0321 | Bengaluru | Resume built 2026-11-02; PDF and application pending |
+| `apple-senior-ui-engineer-web/` | Apple (IS&T, Retail and Marcom Engineering) | Senior UI Engineer - Web, 200690650-0321 | Bengaluru | Applied 2026-11-02 |
