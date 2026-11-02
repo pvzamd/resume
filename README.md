@@ -10,6 +10,12 @@ npm run docx      # docx only
 Output: `parvez_ahmed_<version>_<yyyy-mm-dd>.{docx,pdf}`
 Same-day rebuilds overwrite that day's files; a new day starts a new set.
 
+**One-off resume for a single job:** `node build.js --job jobs/<folder> [--no-pdf]`.
+- It builds v2 only, from `<folder>/content.js` (usually overrides on top of the root
+  `content.js`), into `<folder>/parvez_ahmed_resume.{docx,pdf}`.
+- `dist/` and the generic resume are left alone, and there's no parity check.
+- See `jobs/README.md`.
+
 ## Layout
 
 ```
