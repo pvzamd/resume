@@ -31,14 +31,7 @@ module.exports = {
         'Built SEO-first stock and IPO sections (**7,000+** pages with **TradingView** charts on a custom datafeed) and cut Google-reported 404s by **92%** (34.5k to 2.7k).',
       ],
     },
-    {
-      ...base.jobs[1],
-      bullets: [
-        'Refactored legacy **webMethods** code to **ES6+** and removed heavy dependencies like Lodash, cutting workflow execution time by **40%**, webhook startup by **75%** and API transaction costs by **15%**.',
-        "Modernized **AppHub**'s **React** UI, migrating class-based components to functional components and hooks.",
-        'Built Webex Teams bots with interactive Microsoft Adaptive Cards, plus **Node.js** plugins and automation scripts for real-time data processing on webMethods.',
-      ],
-    },
+    base.jobs[1],
     base.jobs[2],
   ],
 

@@ -56,9 +56,8 @@ Only this folder's `content.js` changed. The generic resume is untouched.
   5. Rise.
   6. Chat library: bundle cut and test suite added. This covers modular, embeddable UI.
   7. SEO pages: shortened.
-- **Dropped for space:** the Performance Management System (PMS) bullet. The two
-  Software AG bot and plugin bullets were merged into one, and the AppHub bullet was
-  reworded as React modernisation.
+- **Dropped for space:** the Performance Management System (PMS) bullet.
+- **Software AG:** the same as the generic resume.
 - **Skills, regrouped to the posting's headings:** Performance, Accessibility,
   UI & Design, CMS & Data viz, Build & Testing, and AI tools.
 - Every claim is backed by my own project notes.
@@ -97,3 +96,4 @@ resume. The page has about 18pt to spare.
 | Date | Step |
 | :-- | :-- |
 | 2026-11-02 | Tailored resume built (DOCX, on the office desktop). PDF still to build on the laptop. Not applied. |
+| 2026-11-02 | Rebuilt with the new Software AG bullets from the generic resume. |
