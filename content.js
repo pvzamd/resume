@@ -57,12 +57,12 @@ const C = {
       company: 'Software AG',
       role: 'Software Engineer',
       dates: 'Feb 2022 – Apr 2024',
-      suffix: ' (acquired by IBM)',
+      suffix: '',
       bullets: [
-        'Refactored legacy **webMethods** code to **ES6+** and removed heavy dependencies like Lodash, cutting workflow execution time by **40%**, webhook startup by **75%** and API transaction costs by **15%**.',
-        'Developed **Node.js** plugins and automation scripts for real-time data processing on webMethods.',
-        'Built Webex Teams integration bots with interactive Microsoft Adaptive Cards.',
-        'Migrated **AppHub** from class-based to functional **React** components.',
+        'Built most of the card-based bots in a 50+ **Webex** bot catalogue on **webMethods**, with up to 20 actions each and **Adaptive Cards**.',
+        'Refactored legacy **webMethods** code to **ES6+**, cutting workflow execution time by **40%**, webhook startup by **75%** and API transaction costs by **15%**.',
+        'Built per-bot usage and error reports for Cisco from **MongoDB** logs in **Node.js**.',
+        'Helped migrate **AppHub** from class-based to functional **React** components.',
       ],
     },
     {
