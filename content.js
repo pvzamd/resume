@@ -43,7 +43,7 @@ const C = {
       suffix: '',
       bullets: [
         // slot with 1 hyperlink (Rise)
-        "Top contributor (37% of commits) to [[Rise]], Alice Blue's **Vue 3** mutual-fund platform: built the IPO, goal-investing and ELSS flows, moved payments to **BSE StarMF 2.0**, and replaced ~140 ad-hoc API calls with a shared service layer.",
+        "Built [[Rise]], Alice Blue's **Vue 3** mutual-fund platform, from scratch as its largest code contributor (~43% of the code): IPO, goal-investing and ELSS flows, payments on **BSE StarMF 2.0**, and a shared API service layer.",
         // slot with 2 hyperlinks (Corporate Website, TradeSchool)
         'Lead development of the [[Corporate Website]] and [[TradeSchool]] in **Next.js**: own the architecture, code review (~400 PRs merged) and production releases, and mentor junior developers.',
         'Redesigning TradeSchool hands-on (11 pages in **Next.js 16** and **Tailwind 4**) and designed its next-phase architecture for content, login and payments.',
