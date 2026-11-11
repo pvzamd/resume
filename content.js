@@ -78,7 +78,7 @@ const C = {
 
   projects: [
     '[[pnl-heatmap]] (npm package): Zero-dependency JavaScript library that renders GitHub-style daily P&L calendars, with ESM/UMD builds and CDN delivery.',
-    '[[Dual-Hangman Game]]: Full-stack **Node.js** and **React** app deployed on **AWS EC2** with NGINX and PM2; built with AI-assisted development (Claude Code, Antigravity IDE).',
+    '[[Dual-Hangman Game]]: Real-time two-player game in **TypeScript** (**React**, **Node.js**, **Socket.IO**), hosted on **AWS EC2** with NGINX and PM2; built with AI-assisted development (Claude Code, Antigravity IDE).',
   ],
 
   // label / value pairs — 9 rows, matching the slots available in v1's sidebar
