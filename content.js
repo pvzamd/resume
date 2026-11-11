@@ -114,7 +114,7 @@ const C = {
       short: 'Diploma in Civil Engineering',
       school: 'Assam Engineering Institute, Assam',
       years: '2010 – 2014',
-      score: '66.86%',
+      score: '66.46%',
     },
   ],
 };
