@@ -26,7 +26,7 @@ const C = {
     'TradeSchool': 'https://tradeschool.aliceblueonline.com/',
     'Software AG': 'https://www.softwareag.com/en/',
     'CrowInfo': 'https://www.crowinfo.com/',
-    'pnl-heatmap': 'https://www.npmjs.com/package/pnl-heatmap',
+    'Learnings': 'https://learnings-3e7.pages.dev/',
     'Dual-Hangman Game': 'https://github.com/pvzamd/dual-hangman',
   },
 
@@ -77,7 +77,7 @@ const C = {
   ],
 
   projects: [
-    '[[pnl-heatmap]] (npm package): Zero-dependency JavaScript library that renders GitHub-style daily P&L calendars, with ESM/UMD builds and CDN delivery.',
+    '[[Learnings]]: NISM exam-prep site in plain **JavaScript** (notes, 256 practice questions, timed mock exam), hosted on **Cloudflare Pages** and shared with colleagues; built with Claude Code.',
     '[[Dual-Hangman Game]]: Real-time two-player game in **TypeScript** (**React**, **Node.js**, **Socket.IO**), hosted on **AWS EC2** with NGINX and PM2; built with AI-assisted development (Claude Code, Antigravity IDE).',
   ],
 
