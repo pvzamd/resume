@@ -52,6 +52,10 @@ matching key in `links`.
   slot 2 has two. Keep `[[Rise]]` in the first and
   `[[Corporate Website]]`/`[[TradeSchool]]` in the second, or reorder v1.js and
   v3.js to match.
+- **Extra links in v1/v3.** A `[[link]]` beyond the ones its template paragraph
+  already has gets a new hyperlink in the build copy, pointing at its URL in
+  `links` (e.g. `[[certificate]]` in the Learnings project). Template links are
+  reused by position, so the existing ones still need to stay in order.
 - **v2 is sized to fill one A4 page.** Adding a few lines pushes it to two. The
   build prints a warning if any pdf comes out over one page.
 - **No Word on this machine?** `python tools/fitcheck.py` simulates Word's line

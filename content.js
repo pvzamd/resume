@@ -1,5 +1,6 @@
 // Single source of truth for resume copy, shared by v1, v3 and v4.
-// Markup: **strong**, [[hyperlink]] (reuses the link already in that paragraph).
+// Markup: **strong**, [[hyperlink]] (v1/v3 reuse the template paragraph's links in
+// order; a [[link]] beyond those gets a new one from `links` below).
 
 const C = {
   name: 'Parvez Ahmed',
@@ -27,6 +28,7 @@ const C = {
     'Software AG': 'https://www.softwareag.com/en/',
     'CrowInfo': 'https://www.crowinfo.com/',
     'Learnings': 'https://learnings-3e7.pages.dev/',
+    'certificate': 'https://learnings-3e7.pages.dev/nism-vii/certificate/',
     'Dual-Hangman Game': 'https://github.com/pvzamd/dual-hangman',
   },
 
@@ -77,7 +79,7 @@ const C = {
   ],
 
   projects: [
-    '[[Learnings]]: NISM exam-prep site in plain **JavaScript** (notes, 256 practice questions, timed mock exam), hosted on **Cloudflare Pages** and shared with colleagues; built with Claude Code.',
+    '[[Learnings]]: NISM exam-prep site in plain **JavaScript** (notes, 349 questions, mock exam) on **Cloudflare Pages**, shared with colleagues; built with Claude Code. Used it to pass **NISM Series VII** (77.5%, [[certificate]]).',
     '[[Dual-Hangman Game]]: Real-time two-player game in **TypeScript** (**React**, **Node.js**, **Socket.IO**), hosted on **AWS EC2** with NGINX and PM2; built with AI-assisted development (Claude Code, Antigravity IDE).',
   ],
 
