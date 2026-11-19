@@ -5,3 +5,6 @@ node_modules/
 # Career docs copied from employer projects: they hold internal details and this
 # repo is public. Local only.
 career-feeds/
+
+# The personal website: its own git repo later, kept out of this one.
+personal-site/
