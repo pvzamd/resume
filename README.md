@@ -8,7 +8,10 @@ npm run docx      # docx only
 ```
 
 Output: `parvez_ahmed_<version>_<yyyy-mm-dd>.{docx,pdf}`
-Same-day rebuilds overwrite that day's files; a new day starts a new set.
+`dist/` keeps only the latest set. Each build moves earlier days' files to
+`dist/archive/` first (once the new build has passed the parity check, so a failed
+build never leaves `dist/` empty). Same-day rebuilds overwrite that day's files.
+If a file is open in Word or a PDF viewer, the move fails: close it and build again.
 
 **One-off resume for a single job:** `node build.js --job jobs/<folder> [--no-pdf]`.
 - It builds v2 only, from `<folder>/content.js` (usually overrides on top of the root
@@ -25,7 +28,8 @@ templates/v1,v3   <- pristine unzipped originals, never edited in place
 lib/v1.js,v3.js   <- apply content.js onto the templates (design untouched)
 lib/v2.js         <- generates v2 from scratch (single column, ATS-first)
 lib/parity.js     <- fails the build if the three versions drift apart
-dist/             <- output
+dist/             <- output: the latest set only
+dist/archive/     <- earlier sets, moved here by the build
 ```
 
 ## What goes where in content.js
@@ -56,6 +60,17 @@ matching key in `links`.
   already has gets a new hyperlink in the build copy, pointing at its URL in
   `links` (e.g. `[[certificate]]` in the Learnings project). Template links are
   reused by position, so the existing ones still need to stay in order.
+- **The website line (`contact.website`) needs layout help in v1 and v3.** v1's
+  template has only LinkedIn and GitHub rows, so the build copies the GitHub box one
+  row lower (text only: there's no website icon) and moves the Skills sidebar down a
+  row. v3 is stacked two-column sections, so a longer Contact list pushes the whole
+  page down; its contact lines lose their 3pt gaps to keep the block the same height.
+  v2 shows the contact details on two lines.
+- **v3's vertical spacing is set in `lib/v3.js`** ("Vertical spacing", with the
+  numbers in `SPACE`). Its left column ends at a column break, so if the left column
+  grows past the page, Experience jumps to page 2 (the build's page-count warning
+  catches it). As of 2026-11-21 the left column has about 45pt to spare, the right
+  column about 20pt.
 - **v2 is sized to fill one A4 page.** Adding a few lines pushes it to two. The
   build prints a warning if any pdf comes out over one page.
 - **No Word on this machine?** `python tools/fitcheck.py` simulates Word's line

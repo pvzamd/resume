@@ -9,7 +9,8 @@
 //                               dist/ are not touched.
 //
 // Output name: <first>_<last>_<version>_<yyyy-mm-dd>.{docx,pdf}
-// Rebuilding on the same day overwrites that day's files.
+// dist/ keeps only the latest set: older sets move to dist/archive/ once the new
+// build has passed the parity check. Rebuilding on the same day overwrites that day's files.
 // A job build is always <first>_<last>_resume.{docx,pdf}, so each job keeps one copy.
 const fs = require('fs');
 const path = require('path');
@@ -21,6 +22,7 @@ const ROOT = __dirname;
 const TPL = path.join(ROOT, 'templates');
 const STAGE = path.join(ROOT, '.build');
 const DIST = path.join(ROOT, 'dist');
+const ARCHIVE = path.join(DIST, 'archive');
 const VERSIONS = ['v1', 'v2', 'v3'];
 
 const noPdf = process.argv.includes('--no-pdf');
@@ -39,6 +41,28 @@ const stamp = [now.getFullYear(),
   String(now.getMonth() + 1).padStart(2, '0'),
   String(now.getDate()).padStart(2, '0')].join('-');
 const outBase = (v) => `${slug}_${v.replace('v', '')}_${stamp}`;
+
+// Move earlier days' resumes from dist/ to dist/archive/, so dist/ only shows the
+// latest set. Today's files stay, to be overwritten. Only files named like a build
+// output are moved; anything else in dist/ is left alone.
+function archiveOlder() {
+  const ours = new RegExp(`^${slug}_\\d+_\\d{4}-\\d{2}-\\d{2}\\.(docx|pdf)$`, 'i');
+  const older = fs.readdirSync(DIST, { withFileTypes: true })
+    .filter((e) => e.isFile() && ours.test(e.name) && !e.name.includes(`_${stamp}.`))
+    .map((e) => e.name);
+  if (!older.length) return;
+  fs.mkdirSync(ARCHIVE, { recursive: true });
+  for (const name of older) {
+    try {
+      fs.renameSync(path.join(DIST, name), path.join(ARCHIVE, name));
+    } catch (e) {
+      console.error(`Could not move dist/${name} to dist/archive/ (${e.code}). ` +
+        'Close it if it is open in Word or a PDF viewer, then build again.');
+      process.exit(1);
+    }
+  }
+  console.log(`moved ${older.length} older file(s) to dist/archive/`);
+}
 
 fs.rmSync(STAGE, { recursive: true, force: true });
 fs.mkdirSync(STAGE, { recursive: true });
@@ -77,6 +101,8 @@ if (JOB) {
   }
   console.log(`parity ok — ${count} content items identical across v1, v2, v3`);
 
+  // Only now, with a good build in hand, so a failed build never empties dist/.
+  archiveOlder();
   for (const v of VERSIONS) {
     const docx = path.join(DIST, outBase(v) + '.docx');
     zip(path.join(STAGE, v), docx);

@@ -14,12 +14,14 @@ const C = {
     location: 'Bengaluru, Karnataka',
     linkedin: 'linkedin.com/in/amdpvz',
     github: 'github.com/pvzamd',
+    website: 'parvez-ahmed-nud.pages.dev',
   },
 
   // hyperlink targets, reused from the existing versions
   links: {
     'linkedin.com/in/amdpvz': 'https://www.linkedin.com/in/amdpvz/',
     'github.com/pvzamd': 'https://github.com/pvzamd',
+    'parvez-ahmed-nud.pages.dev': 'https://parvez-ahmed-nud.pages.dev/',
     'amdpvz@gmail.com': 'mailto:amdpvz@gmail.com',
     'Alice Blue Financial Services': 'https://aliceblueonline.com/',
     'Rise': 'https://rise.aliceblueonline.com/',
@@ -48,7 +50,7 @@ const C = {
         "Built [[Rise]], Alice Blue's **Vue 3** mutual-fund platform, from scratch as its largest code contributor (~43% of the code): IPO, goal-investing and ELSS flows, payments on **BSE StarMF 2.0**, and a shared API service layer.",
         // slot with 2 hyperlinks (Corporate Website, TradeSchool)
         'Lead development of the [[Corporate Website]] and [[TradeSchool]] in **Next.js**: own the architecture, code review (~400 PRs merged) and production releases, and mentor junior developers.',
-        'Redesigning TradeSchool hands-on (11 pages in **Next.js 16** and **Tailwind 4**) and designed its next-phase architecture for content, login and payments.',
+        'Hands-on redesign of TradeSchool in **Next.js 16** and **Tailwind 4**, and its next-phase architecture for content, login and payments.',
         'Built SEO-first stock and IPO sections (**7,000+** pages with TradingView charts) and cut Google-reported 404s by **92%** (34.5k to 2.7k) with nginx redirect maps and sitemap fixes.',
         'Improved INP: removed Material UI, deferred third-party tags (main-thread busy **343 to 18 ms/s**), built real-user INP attribution, and cut a brokerage-calculator tap from **~4 s to under 0.2 s**.',
         'Designed and shipped the internal Performance Management System solo (**Next.js**, **Prisma/MySQL**, **AWS EC2**), automating monthly reviews, weighted scoring and email notifications for 83 employees.',
@@ -100,7 +102,7 @@ const C = {
     {
       degree: 'Master of Computer Application (MCA)',
       short: 'Master of Computer Application',
-      school: 'Tezpur University (Central), Assam',
+      school: 'Tezpur University, Assam',
       years: '2018 – 2021',
       score: 'CGPA 8.04',
     },
