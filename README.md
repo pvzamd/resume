@@ -13,6 +13,11 @@ Output: `parvez_ahmed_<version>_<yyyy-mm-dd>.{docx,pdf}`
 build never leaves `dist/` empty). Same-day rebuilds overwrite that day's files.
 If a file is open in Word or a PDF viewer, the move fails: close it and build again.
 
+**The personal site gets the PDFs too.** A full build with PDFs also copies them to
+`personal-site/public/resume/parvez-ahmed-resume-<version>.pdf` (fixed names, so the
+site's links never change). Commit and push the site to publish them. Skipped with
+`--no-pdf`, `--job`, or when `personal-site/` isn't there.
+
 **One-off resume for a single job:** `node build.js --job jobs/<folder> [--no-pdf]`.
 - It builds v2 only, from `<folder>/content.js` (usually overrides on top of the root
   `content.js`), into `<folder>/parvez_ahmed_resume.{docx,pdf}`.

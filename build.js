@@ -125,4 +125,22 @@ if (!noPdf) {
   }
 }
 
+// Copy the new PDFs into the personal site (its own repo, in personal-site/) under
+// fixed names, so the site's résumé links never change. Only for the full build with
+// PDFs; skipped if the site isn't here. Commit and push the site to publish them.
+const SITE_RESUME = path.join(ROOT, 'personal-site', 'public', 'resume');
+if (!JOB && !noPdf && fs.existsSync(path.dirname(SITE_RESUME))) {
+  fs.mkdirSync(SITE_RESUME, { recursive: true });
+  try {
+    for (const v of VERSIONS) {
+      fs.copyFileSync(path.join(DIST, outBase(v) + '.pdf'),
+        path.join(SITE_RESUME, `${slug.replace(/_/g, '-')}-resume-${v.replace('v', '')}.pdf`));
+    }
+    console.log('copied the PDFs to personal-site/public/resume/ (commit and push the site to publish)');
+  } catch (e) {
+    console.error(`Could not copy the PDFs to the personal site (${e.code}). ` +
+      'Close them if they are open, then build again.');
+  }
+}
+
 fs.rmSync(STAGE, { recursive: true, force: true });
